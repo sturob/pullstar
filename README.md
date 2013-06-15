@@ -1,1 +1,8 @@
-node ./extract_repos | ./main_loop.sh
+# requires
+
+node.js
+
+# usage
+
+		cd bin
+		node starred_repos.js | ./main_loop.sh
