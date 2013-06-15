@@ -1,6 +1,4 @@
-var fs      = require('fs'),
-		https   = require('https'),
-		request = require('request'),
+var request = require('request'),
     json    = require('json'),
     log     = function(a) { console.log(a) }
 
@@ -14,7 +12,7 @@ function getPageOfRepos(n) {
 		}
 	}
 
-	request(options,   function (error, response, body) {
+	request(options, function (error, response, body) {
 		if (error) throw error;
 
 		var repos = JSON.parse( body )
@@ -27,7 +25,7 @@ function getPageOfRepos(n) {
 			repos.map( asOneLine ).forEach( log )
 			getPageOfRepos( ++n )
 		}
-  })
+	})
 }
 
 getPageOfRepos(1)
