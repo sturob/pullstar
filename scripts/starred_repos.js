@@ -4,9 +4,10 @@ var request = require('request'),
 
 var USERNAME = 'sturob'
 
+
 function getPageOfRepos(n) {
 	var options = {
-		method: 'GET', uri: 'https://api.github.com/users/' + USERNAME + '/starred?page=' + n,
+		method: 'GET', uri: 'https://api.github.com/users/' + USERNAME + '/starred?sort=updated&direction=desc&page=' + n,
 		headers: {
 			"user-agent": "node.js"	
 		}
