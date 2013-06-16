@@ -4,4 +4,4 @@ node.js
 
 # usage
 
-		./pullstar
+		./pullstar.sh
