@@ -1,6 +1,10 @@
 #!/bin/sh
 
-TARGET=$HOME'/code/github.com'
+if [ ! $3 ]; then
+	echo Specify a directory to pull repos to
+fi
+
+TARGET="$3/github.com"
 
 user=$(echo $1 | cut -f1 -d\/)
 project=$(echo $1 | cut -f2 -d\/)

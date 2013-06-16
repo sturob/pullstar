@@ -2,12 +2,20 @@ var request = require('request'),
     json    = require('json'),
     log     = function(a) { console.log(a) }
 
-var USERNAME = 'sturob'
+var USERNAME = process.argv[2];
 
+if (! USERNAME) {
+	log('specify a username');
+	process.exit(1);
+}
+
+var endpoint = function(u) { 
+	return 'https://api.github.com/users/' + USERNAME + '/starred?sort=updated&direction=desc&page='
+}
 
 function getPageOfRepos(n) {
 	var options = {
-		method: 'GET', uri: 'https://api.github.com/users/' + USERNAME + '/starred?sort=updated&direction=desc&page=' + n,
+		method: 'GET', uri: endpoint(USERNAME) + n,
 		headers: {
 			"user-agent": "node.js"	
 		}
