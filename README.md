@@ -1,4 +1,4 @@
-Git clone and pull repositories a user has starred on GitHub.
+Clone, pull and update the repositories a user has starred on GitHub.
 
 
 ## Usage
